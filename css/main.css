@@ -1,0 +1,12 @@
+
+html, body {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+body {
+    background-color: #d0d0d0;
+}
+
+a, a:visited {
+    color: darkorange;
+}

@@ -1,0 +1,72 @@
+Everything Ya Wanted To Know About Ryzom Mobs But Were Afraid To Ask (Courtesy of FluffyBunnies)																					
+Description	Attack / Defense Info		Damage Type		Physical Resistances			Magic Protections							Affliction Immunities						
+Mob Name	Aggro Range	D / P*	Physical	Magic	Blunt	Pierce	Slash	Acid	Cold	Rot	Poison	Shockwave	Fire	Electric	Move Slow	Attack Slow	Stun	Sleep	Fear	Blind	Root
+								General Mobs													
+arana	NA	parry	blunt	NA	50%	0%	0%	25%	0%	20%	0%	0%	0%	0%	X	X	 	 	 	 	 
+arma	NA	parry	blunt	NA	0%	50%	0%	0%	75%	50%	0%	0%	0%	0%	X	X	 	 	 	 	 
+bawaab	NA	parry	blunt	NA	25%	0%	0%	0%	75%	50%	0%	0%	0%	0%	 	 	X	X	 	 	 
+bodoc	NA	parry	blunt	NA	50%	0%	0%	0%	12%	50%	0%	0%	0%	0%	 	 	X	 	X	 	 
+bolobi	NA	dodge	pierce	NA	0%	50%	0%	0%	50%	50%	30%	0%	0%	0%	 	 	 	 	 	X	 
+capryni	NA	parry	pierce	NA	12%	0%	0%	0%	0%	50%	0%	0%	0%	0%	X	 	 	 	 	 	X
+clopper	11	parry	slash	NA	0%	0%	25%	0%	0%	50%	0%	0%	0%	0%	 	 	X	X	 	X	 
+cray	NA	dodge	blunt	NA	0%	0%	25%	0%	0%	50%	0%	0%	0%	0%	 	 	 	X	 	 	 
+cuttler	18	dodge	pierce	NA	0%	0%	50%	0%	0%	50%	0%	0%	0%	0%	 	X	 	 	X	 	 
+frippo	NA	dodge	slash	NA	0%	12%	0%	0%	0%	50%	0%	0%	0%	0%	 	 	 	 	 	 	 
+gingo	16	dodge	slash	blind	0%	0%	25%	0%	50%	50%	0%	0%	0%	0%	 	X	 	 	X	 	 
+gnoof	NA	parry	blunt	NA	25%	0%	0%	0%	0%	50%	0%	0%	0%	0%	 	 	X	X	 	 	 
+goari	16	parry	slash	electric	12%	0%	0%	0%	0%	50%	0%	0%	0%	30%	 	 	X	X	 	X	 
+gubani	NA	dodge	blunt	NA	0%	50%	0%	0%	75%	50%	0%	0%	0%	30%	X	 	 	 	 	 	X
+horncher	10	parry	pierce	NA	0%	0%	50%	0%	25%	50%	0%	30%	0%	0%	 	 	X	X	 	X	 
+igara	NA	dodge	slash	NA	0%	12%	0%	0%	25%	50%	0%	0%	0%	0%	X	 	 	 	 	 	X
+izam	NA	dodge	pierce	NA	0%	25%	0%	0%	50%	50%	0%	0%	0%	0%	 	 	X	 	 	 	 
+javing	10	dodge	pierce	NA	0%	12%	0%	0%	50%	50%	0%	0%	0%	0%	 	 	X	 	 	 	 
+jugula	16	parry	slash	poison DoT	0%	50%	0%	0%	50%	50%	0%	0%	0%	0%	X	X	 	 	 	 	 
+lumper	NA	parry	blunt	acid	0%	0%	50%	50%	0%	50%	0%	0%	0%	0%	 	 	 	 	 	X	 
+madakam	NA	parry	blunt	madness	0%	50%	0%	0%	0%	50%	0%	0%	0%	30%	 	 	X	 	X	 	 
+mektoub	NA	dodge	blunt	NA	0%	0%	25%	0%	25%	50%	0%	0%	0%	0%	 	 	X	X	 	 	 
+messab	NA	dodge	blunt	NA	0%	0%	25%	0%	50%	50%	0%	0%	0%	0%	X	 	 	 	 	 	X
+najab	14	parry	blunt	rot	50%	0%	0%	25%	0%	50%	0%	0%	0%	0%	X	X	 	 	 	 	 
+ocyx	11	dodge	pierce	fire	50%	0%	0%	0%	0%	50%	0%	0%	0%	0%	X	X	 	X	X	 	X
+ploderos	NA	parry	blunt	NA	0%	0%	50%	0%	25%	50%	0%	30%	0%	0%	 	 	X	 	X	 	 
+ragus	15	dodge	slash	NA	0%	12%	0%	0%	25%	50%	0%	0%	0%	0%	 	 	 	X	 	 	 
+raspal	NA	dodge	pierce	NA	25%	0%	0%	0%	12%	50%	0%	0%	0%	0%	X	 	 	 	 	 	X
+rendor	NA	parry	blunt	NA	0%	0%	25%	0%	0%	50%	0%	0%	30%	0%	 	 	X	 	X	 	 
+shalah	NA	parry	pierce	NA	0%	50%	0%	50%	0%	50%	0%	0%	0%	0%	 	 	 	 	 	X	 
+timari	NA	parry	slash	NA	0%	50%	0%	0%	25%	50%	0%	0%	0%	0%	 	 	 	 	 	X	 
+torbak	13	dodge	pierce	NA	25%	0%	0%	0%	50%	50%	0%	0%	0%	0%	X	X	 	 	 	 	X
+tyrancha	11	parry	pierce	acid	50%	0%	0%	25%	0%	50%	0%	0%	30%	0%	 	X	 	X	X	 	 
+varinx	20	dodge	slash	NA	0%	25%	0%	0%	50%	50%	0%	0%	30%	0%	X	X	 	 	 	 	X
+vorax	21	parry	slash	fear	70%	70%	70%	100%	100%	100%	40%	40%	40%	40%	 	 	 	X	X	 	 
+wombai	NA	dodge	pierce	NA	0%	0%	50%	0%	0%	50%	0%	0%	0%	0%	 	 	 	 	 	X	 
+yber	NA	dodge	pierce	shockwave	0%	0%	12%	0%	25%	50%	0%	30%	0%	0%	 	 	X	X	 	 	 
+yelk	NA	parry	blunt	NA	0%	0%	50%	0%	75%	30%	30%	0%	0%	0%	X	X	 	 	 	 	 
+yetin	15	dodge	pierce	NA	0%	0%	50%	0%	50%	50%	0%	0%	0%	0%	 	 	 	 	 	 	 
+yubo	NA	dodge	slash	NA	0%	0%	0%	0%	0%	50%	0%	0%	0%	0%	 	 	 	 	 	 	 
+zerx	14	parry	slash	acid	50%	0%	0%	25%	0%	 	0%	0%	0%	0%	 	 	 	 	 	 	 
+								Primates													
+cute	11-20	dodge	blunt	rot	25%	0%	0%	0%	0%	25%	0%	0%	0%	0%	 	 	 	 	 	 	X
+frahar	11	dodge	blunt	fire	0%	0%	25%	0%	0%	0%	0%	0%	25%	0%	X	 	 	 	 	 	 
+gibbai	15	dodge	blunt	cold	0%	25%	0%	0%	25%	0%	0%	0%	0%	0%	 	 	 	 	 	 	 
+								Plants													
+cratcha	NA	parry	pierce	poison	0%	12%	0%	80%	25%	0%	30%	0%	0%	0%	 	 	 	 	X	 	 
+jubla	NA	parry	blunt	shockwave	12%	0%	12%	100%	60%	60%	0%	0%	0%	0%	 	 	 	 	X	 	 
+psykopla	NA	parry	NA	sw & ele	0%	12%	12%	80%	0%	0%	0%	30%	0%	30%	 	 	 	 	X	 	 
+shooki	NA	parry	blunt	fire	0%	0%	12%	80%	0%	0%	0%	0%	30%	0%	 	 	 	 	X	 	 
+slaveni	NA	dodge	slash	root	25%	0%	0%	65%	12%	0%	0%	0%	0%	0%	 	 	 	 	X	 	 
+stinga	NA	dodge	NA	cold & root	25%	25%	0%	80%	50%	0%	0%	0%	0%	0%	 	 	 	 	X	 	 
+								Kitin													
+kiban	NA	parry	pierce	NA	0%	25%	0%	100%	0%	80%	30%	30%	30%	30%	 	 	X	 	 	 	 
+kidinak	?	dodge	slash	sleep	80%	80%	80%	0%	0%	0%	0%	0%	0%	0%	 	 	 	 	 	 	 
+kincher	20	parry	pierce	electric	0%	0%	0%	100%	30%	80%	30%	30%	30%	30%	X	X	X	 	 	 	 
+kinrey	?	parry	pierce	acid	60%	60%	60%	100%	30%	80%	30%	30%	30%	30%	 	 	 	X	X	 	X
+kipee	NA	parry	pierce	stun	25%	25%	0%	100%	0%	80%	30%	30%	30%	30%	 	 	 	 	 	 	 
+kipesta	16	dodge	pierce	fire	0%	25%	0%	30%	0%	80%	0%	0%	0%	0%	X	X	 	 	 	 	 
+kipucka	18	parry	pierce	NA	80%	80%	80%	20%	0%	20%	30%	30%	30%	30%	 	 	 	X	 	 	 
+kirosta	18	parry	pierce	poison	40%	40%	40%	40%	30%	40%	30%	30%	30%	30%	 	 	 	 	 	X	X
+kirosta patrol	80	parry	pierce	poison	40%	40%	40%	40%	30%	40%	30%	30%	30%	30%	 	 	 	 	 	X	X
+kizoar	NA	dodge	pierce	NA	0%	0%	12%	25%	0%	80%	0%	0%	0%	0%	 	 	 	 	 	 	X
+kizarak	?	parry	pierce	acid	50%	50%	50%	0%	0%	0%	0%	0%	0%	0%	 	 	 	 	 	 	 
+																					
+	* Aim at hands for parry / aim at feet for dodge																				
+																					
+Based upon data from mestemaker site (2005) and augented by FyrosFreddy																					

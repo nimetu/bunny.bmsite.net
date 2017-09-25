@@ -1,0 +1,15 @@
+.hg
+.hgignore
+
+# phpstorm project
+.idea
+
+# local
+.cache
+config.php
+save/
+
+# temp files
+*.swp
+
+vendor/
