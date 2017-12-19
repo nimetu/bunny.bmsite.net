@@ -41,7 +41,7 @@ class MatsCalculatorMelee extends MatsCalculator
             '1bm' => [
                 'b' => ['bark' => 3, 'grip' => 3, 'woodnode' => 5 + 3],
                 'm' => ['bark' => 5, 'grip' => 5, 'woodnode' => 5 + 4],
-                'h' => ['bark' => 6, 'grip' => 6, 'woodnode' => 6 + 4],
+                'h' => ['bark' => 6, 'grip' => 6, 'woodnode' => 6 + 5],
             ],
             // staff
             '1bs' => [
