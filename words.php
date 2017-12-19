@@ -19,7 +19,7 @@ return [
     'wood' => ['en' => 'Wood'],
     'woodnode' => ['en' => 'Wood Node'],
     // grip == fiber - mislabeled in csv
-    'grip' => ['en' => 'Grip'],
+    'grip' => ['en' => 'Fiber'],
     // ResourceInfo
     //************************************************************************
     // Mob data - index from csv file
