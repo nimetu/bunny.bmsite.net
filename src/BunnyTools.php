@@ -33,7 +33,7 @@ class BunnyTools
             $uri = dirname($uri);
         }
 
-        $baseUrl = 'http'.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on').'://' . $_SERVER['SERVER_NAME'] . $uri;
+        $baseUrl = 'http'.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '').'://' . $_SERVER['SERVER_NAME'] . $uri;
         if (substr($baseUrl, -1) == '/') {
             $baseUrl = substr($baseUrl, 0, -1);
         }
