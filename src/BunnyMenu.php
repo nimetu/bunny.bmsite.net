@@ -68,13 +68,14 @@ class BunnyMenu
         // example url: ?action=gearCalc
         $menu = [];
         $menu[_t('Calculators')] = [
-            'gearCalc' => _t('Gear'),
+            'gearCalc' => _t('Gear Requirements'),
             'xpCalc' => _t('XP'),
             'matsArmorCalc' => _t('Mats (Armor)'),
             'matsJewelCalc' => _t('Mats (Jewel)'),
             'matsMeleeCalc' => _t('Mats (Melee)'),
             'matsRangeCalc' => _t('Mats (Range)'),
             'matsShieldCalc' => _t('Mats (Shield)'),
+            'statsCalc' => _t('Crafting Ranges'),
         ];
         $menu[_t('Encyclopedia')] = [
             'mobData' => _t('Mobs data'),
@@ -90,6 +91,8 @@ class BunnyMenu
         ];
 
         if ($this->debug) {
+            //$menu['Testing'] = [
+            //];
         }
 
         $html = $this->renderSubMenu($menu);
@@ -108,7 +111,7 @@ class BunnyMenu
         $html = '';
 
         $tplHeader = '<tr><td height="20" bgcolor="{color}"><span style="font-weight: bold;">{text}</span></td>';
-        $tplItem = '<tr><td height="20" bgcolor="{color}">{text}</td>';
+        $tplItem = '<tr><td height="20" bgcolor="{color}" nowrap>{text}</td>';
 
         $i = 0;
         foreach ($menu as $key => $value) {

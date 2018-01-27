@@ -222,7 +222,7 @@ EOF;
             {$menu}
             {$langSwitch}
         </td>
-        <td align="center">
+        <td align="center" width="100%">
             {$content}
         </td>
     </tr>
@@ -305,6 +305,10 @@ EOF;
     {
         if (!isset($options['type'])) {
             $options['type'] = 'text';
+        }
+        // ingame input size expects pixel width
+        if (isset($options['size']) && $this->ingame) {
+            $options['size'] *= 14;
         }
         $html = '<input ';
         foreach ($options as $k => $v) {

@@ -69,12 +69,13 @@ class BunnyTools
         }
 
         $this->menu->setActiveMenuIndex($uri['action']);
-        $debugChars = ['Fyrosfreddy', 'Karu'];
+        $debugChars = ['Fyrosfreddy', 'Skiy', 'Karu'];
         $this->menu->setDebug(isLOCAL || in_array($this->user->getCharName(), $debugChars));
 
         $routes = [
             // Calculators
             'gearCalc' => 'GearCalculator',
+            'statsCalc' => 'StatsCalculator',
             'xpCalc' => 'XpCalculator',
             'matsArmorCalc' => 'MatsCalculatorArmor',
             'matsJewelCalc' => 'MatsCalculatorJewel',
