@@ -501,8 +501,21 @@ class StatsCalculator extends BunnyToolPage
 
         $html = '<table width="100%" cellspacing="0" cellpadding="0">' . $html . '</table>';
 
-        if ($type == '1hammo' || $type == '2hammo') {
-            $html .= '<span style="font-size: smaller;">' . _th('* HitRate stanza not included') . '</span>';
+        if (in_array($type, ['1hmelee', '2hmelee', 'amps'])) {
+            $footnote = _t('* Inc.Damage stanza not included');
+        } elseif (in_array($type, ['1hammo', '2hammo'])) {
+            $footnote = _t('* HitRate stanza not included');
+        } else {
+            $footnote = '';
+        }
+
+        if ($footnote !== '') {
+            $html .= '
+            <table width="100%">
+            <tr>
+                <td align="center"><span style="font-size: smaller;">' . _h($footnote) . '</span></td>
+            </tr>
+            </table>';
         }
 
         return '<span style="font-size: smaller;">' . $html . '</span>';
@@ -729,9 +742,9 @@ class StatsCalculator extends BunnyToolPage
             if (isset($result[$item]['Dmg']) && isset($result[$item]['HitRate'])) {
                 if ($result[$item]['Dmg'] > 0 && $result[$item]['HitRate'] > 0) {
                     $result[$item]['dmg/min'] = $this->formatStat(
-                        'dmg/min',
-                        $result[$item]['HitRate'] * $result[$item]['Dmg']
-                    );
+                            'dmg/min',
+                            $result[$item]['HitRate'] * $result[$item]['Dmg']
+                        ) . ' *';
                 }
             }
 
