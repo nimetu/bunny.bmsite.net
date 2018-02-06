@@ -69,13 +69,13 @@ class BunnyMenu
         $menu = [];
         $menu[_t('Calculators')] = [
             'gearCalc' => _t('Gear Requirements'),
+            'statsCalc' => _t('Crafting Ranges'),
             'xpCalc' => _t('XP'),
             'matsArmorCalc' => _t('Mats (Armor)'),
             'matsJewelCalc' => _t('Mats (Jewel)'),
             'matsMeleeCalc' => _t('Mats (Melee)'),
             'matsRangeCalc' => _t('Mats (Range)'),
             'matsShieldCalc' => _t('Mats (Shield)'),
-            'statsCalc' => _t('Crafting Ranges'),
         ];
         $menu[_t('Encyclopedia')] = [
             'mobData' => _t('Mobs data'),
