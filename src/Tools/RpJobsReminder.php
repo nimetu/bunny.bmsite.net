@@ -79,7 +79,7 @@ class RpJobsReminder extends BunnyToolPage
         $this->registerEvent(new ReminderEvent('rpjob_200', _th('Butcher'), $timer, $group));
         $this->registerEvent(new ReminderEvent('rpjob_201', _th('Florist'), $timer, $group));
         $this->registerEvent(new ReminderEvent('rpjob_202', _th('Water-Carrier'), $timer, $group));
-        $this->registerEvent(new ReminderEvent('rpjob_203', _th('Magnetic Crtographer'), $timer, $group));
+        $this->registerEvent(new ReminderEvent('rpjob_203', _th('Magnetic Cartographer'), $timer, $group));
         $this->registerEvent(new ReminderEvent('rpjob_204', _th('Toolmaker'), $timer, $group));
         $this->registerEvent(new ReminderEvent('rpjob_205', _th('Medic'), $timer, $group));
         $this->registerEvent(new ReminderEvent('rpjob_206', _th('Larvester'), $timer, $group));
