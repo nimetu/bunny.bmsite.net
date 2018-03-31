@@ -146,7 +146,7 @@ EOF;
                 $tplRow,
                 [
                     '{bgcolor}' => '#808080',
-                    '{name}' => _th('subregion'),
+                    '{name}' => _th('Humidity'),
                     '{best}' => _th('best'),
                     '{good}' => _th('good'),
                     '{bad}' => _th('bad'),

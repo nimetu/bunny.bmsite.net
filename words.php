@@ -20,7 +20,11 @@ return [
     'woodnode' => ['en' => 'Wood Node'],
     // grip == fiber - mislabeled in csv
     'grip' => ['en' => 'Fiber'],
-    // ResourceInfo
+	// ResourceInfo
+	'best' => ['en' => '0% - 16.6%'],
+	'good' => ['en' => '16.7% - 49.9%'],
+	'bad' => ['en' => '50.0% - 83.3%'],
+	'worst' => ['en' => '83.4% - 100%'],
     //************************************************************************
     // Mob data - index from csv file
     'Mob Name' => ['en' => 'Mob Name'],
