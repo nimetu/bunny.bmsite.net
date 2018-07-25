@@ -46,7 +46,13 @@ class BunnyTools
     /** @return bool */
     public function isLoggedIn()
     {
-        return $this->user->getId() > 0;
+        global $config;
+        if ($config['debug'] == true) {
+            return 1;
+        }
+        else {
+            return $this->user->getId() > 0;
+        }
     }
 
     /**
