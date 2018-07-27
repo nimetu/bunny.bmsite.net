@@ -149,10 +149,13 @@ if ($config['debug'] == true && (isLOCAL || in_array($user['char_name'], $debugC
 // helper functions
 
 function debug($data){
-    print '<pre>';
-    print "Admin Debug Panel:\r\n";
-    print print_r($data);
-    print "</pre><hr>";
+    global $user, $debugChars;
+    if (isLOCAL || in_array($user['char_name'], $debugChars)) {
+        print '<pre>';
+        print "Admin Debug Panel:\r\n";
+        print print_r($data);
+        print "</pre><hr>";
+    }
 }
 
 /**
