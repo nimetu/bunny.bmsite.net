@@ -47,7 +47,7 @@ class BunnyTools
     public function isLoggedIn()
     {
         global $config;
-        if ($config['debug'] == true && $this->user->getId() <= 0) {
+        if (($config['debug'] == true && $this->user->getId() <= 0) || isLOCAL) {
             return 1;
         }
         else {
@@ -64,6 +64,7 @@ class BunnyTools
      */
     public function run($query)
     {
+        global $debugChars;
         $uri = [];
         parse_str($query, $uri);
         if (empty($uri['action'])) {
@@ -75,7 +76,7 @@ class BunnyTools
         }
 
         $this->menu->setActiveMenuIndex($uri['action']);
-        $debugChars = ['Fyrosfreddy', 'Skiy', 'Karu'];
+        //$debugChars = ['Fyrosfreddy', 'Skiy', 'Karu', 'Sarpedonia'];
         $this->menu->setDebug(isLOCAL || in_array($this->user->getCharName(), $debugChars));
 
         $routes = [

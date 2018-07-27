@@ -2,14 +2,12 @@
 // (c) 2016 Meelis Mägi <nimetu@gmail.com>
 // License: AGPL-3.0 or later (https://www.gnu.org/licenses/agpl)
 
+require_once __DIR__ . '/src/defines.php';
 
 // work aroung a bug in client - cookie domain is case-sensitive
 if ($_SERVER['HTTP_HOST'] != strtolower($_SERVER['HTTP_HOST'])) {
     header('Location: http://' . strtolower($_SERVER['HTTP_HOST']) . $_SERVER['REQUEST_URI']);
 }
-
-// mask possible unset index warning
-define('isLOCAL', @$_SERVER['HTTP_HOST'] == 'ryapp');
 
 //****************************************************************************
 // defaults
@@ -22,6 +20,9 @@ if (file_exists(__DIR__ . '/config.php')) {
 } else {
     $config = include __DIR__ . '/config.dist.php';
 }
+
+// mask possible unset index warning
+define('isLOCAL', @$_SERVER['HTTP_HOST'] !== $config['remotehost']);
 
 if (!function_exists('ryzom_translate')) {
     // placeholder incase nimetu/ryzom_extra is not included
@@ -131,7 +132,7 @@ echo $bunny->run($_SERVER['QUERY_STRING']);
 // save user session
 $u->save();
 
-if (isLOCAL) {
+if ($config['debug'] == true && (isLOCAL || in_array($user['char_name'], $debugChars))) {
     echo '<hr>';
     echo '<pre>POST:';
     var_dump($_POST);
@@ -146,6 +147,14 @@ if (isLOCAL) {
 
 //****************************************************************************
 // helper functions
+
+function debug($data){
+    print '<pre>';
+    print "Admin Debug Panel:\r\n";
+    print print_r($data);
+    print "</pre><hr>";
+}
+
 /**
  * Render AppZone auth error and then exit
  *

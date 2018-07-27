@@ -10,3 +10,12 @@ body {
 a, a:visited {
     color: darkorange;
 }
+
+pre {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid red;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 2px;
+}
