@@ -14,4 +14,5 @@ return [
     ],
     // where to save user data, ie occupation timers
     'save-path' => __DIR__ . '/save',
+    'remotehost' => 'ryapp',
 ];
