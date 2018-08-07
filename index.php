@@ -8,9 +8,6 @@ if ($_SERVER['HTTP_HOST'] != strtolower($_SERVER['HTTP_HOST'])) {
     header('Location: http://' . strtolower($_SERVER['HTTP_HOST']) . $_SERVER['REQUEST_URI']);
 }
 
-// mask possible unset index warning
-define('isLOCAL', @$_SERVER['HTTP_HOST'] == 'ryapp');
-
 //****************************************************************************
 // defaults
 date_default_timezone_set('UTC');
@@ -72,14 +69,6 @@ if (isset($_GET['user']) && isset($_GET['checksum'])) {
 //****************************************************************************
 // Session auth
 if (empty($user) && isset($_SESSION['user'])) {
-    // debug lang
-    if (isLOCAL) {
-        $knownLanguages = ['en', 'fr', 'de', 'ru', 'es'];
-        if (isset($_GET['lang']) && in_array($_GET['lang'], $knownLanguages)) {
-            $_SESSION['user']['lang'] = $_GET['lang'];
-        }
-    }
-
     $user = $_SESSION['user'];
 }
 
@@ -102,9 +91,19 @@ foreach ($defaults as $k => $v) {
 }
 $user['id'] = (int) $user['id'];
 
-// debug lang
-if (isLOCAL) {
-    $_SESSION['user'] = $user;
+$user['@debug'] = $config['debug'] || in_array(strtolower($user['char_name']), $config['debug_names']);
+$user['@tester'] = $config['debug'] || in_array(strtolower($user['char_name']), $config['tester_names']);
+$user['@translator'] = $config['debug'] || in_array(strtolower($user['char_name']), $config['translator_names']);
+
+// if set to true, then _t() will show missing translations
+define('isTRANSLATOR', $user['@translator']);
+if ($user['@translator']) {
+    if (isset($_GET['lang']) && in_array($_GET['lang'], $config['languages'])) {
+        $_SESSION['override_language'] = $_GET['lang'];
+    }
+    if (isset($_SESSION['override_language'])) {
+        $user['lang'] = $_SESSION['override_language'];
+    }
 }
 
 // language used for _t() translations
@@ -126,12 +125,13 @@ $u = new BunnyUser($user, $userStorage);
 
 $storage = new BunnyFileStorage('global', $config['save-path']);
 $bunny = new BunnyTools($u, $storage);
+$bunny->setLanguages($config['languages']);
 echo $bunny->run($_SERVER['QUERY_STRING']);
 
 // save user session
 $u->save();
 
-if (isLOCAL) {
+if ($u->isShowDebug()) {
     echo '<hr>';
     echo '<pre>POST:';
     var_dump($_POST);
@@ -270,7 +270,7 @@ function _t($key)
     }
 
     // local debug to highlight missing translations
-    if (isLOCAL) {
+    if (isTRANSLATOR) {
         return $key . '[' . $lang . ']';
     }
 

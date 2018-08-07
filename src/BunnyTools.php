@@ -41,6 +41,19 @@ class BunnyTools
         $this->view = new BunnyView($this->menu, $baseUrl);
         $this->view->setIngame(strstr($_SERVER['HTTP_USER_AGENT'], 'Ryzom') !== false);
         $this->view->setCharName($this->user->getCharName());
+
+        $this->menu->setDebug($this->user->isTester());
+        $this->view->setDebug($this->user->isShowDebug());
+        $this->view->setTranslator($this->user->isTranslator());
+    }
+
+    /**
+     * Set available languages for translators
+     *
+     * @param string[]
+     */
+    public function setLanguages(array $langs) {
+        $this->view->setLanguages($langs);
     }
 
     /** @return bool */
@@ -64,13 +77,12 @@ class BunnyTools
             $uri['action'] = 'index';
         }
 
-        if (!isLOCAL && !$this->isLoggedIn()) {
+        // allow anonymous access if 'Guest' is marked as tester in config
+        if (!$this->user->isTester() && !$this->isLoggedIn()) {
             $uri['action'] = 'index';
         }
 
         $this->menu->setActiveMenuIndex($uri['action']);
-        $debugChars = ['Fyrosfreddy', 'Skiy', 'Karu'];
-        $this->menu->setDebug(isLOCAL || in_array($this->user->getCharName(), $debugChars));
 
         $routes = [
             // Calculators

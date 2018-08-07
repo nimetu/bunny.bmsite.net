@@ -8,6 +8,15 @@
 class BunnyView
 {
     /** @var bool */
+    private $debug = false;
+
+    /** @var bool */
+    private $translator = false;
+
+    /** @var string[] */
+    private $languages = array();
+
+    /** @var bool */
     private $ingame = false;
 
     /** @var BunnyMenu */
@@ -50,6 +59,36 @@ class BunnyView
     {
         $this->baseUrl = $baseUrl;
         $this->menu = $menu;
+    }
+
+    /**
+     * Enable/disable debug messages
+     *
+     * @param bool $b
+     */
+    public function setDebug($b)
+    {
+        $this->debug = $b;
+    }
+
+    /**
+     * Enable/disable language links
+     *
+     * @param bool $b
+     */
+    public function setTranslator($b)
+    {
+        $this->translator = $b;
+    }
+
+    /**
+     * Set available languages. Links shown to translators
+     *
+     * @param string[] $langs
+     */
+    public function setLanguages(array $langs)
+    {
+        $this->languages = $langs;
     }
 
     /**
@@ -198,13 +237,12 @@ EOF;
 
         $userName = _h($this->charName);
 
-        // debug lang
-        if (defined('isLOCAL') && isLOCAL) {
-            $langSwitch = '<a href="?lang=en">en</a>';
-            $langSwitch .= ' | <a href="?lang=fr">fr</a>';
-            $langSwitch .= ' | <a href="?lang=de">de</a>';
-            $langSwitch .= ' | <a href="?lang=ru">ru</a>';
-            $langSwitch .= ' | <a href="?lang=es">es</a>';
+        if ($this->translator) {
+            $tmp = array();
+            foreach($this->languages as $lang) {
+                $tmp[] = '<a href="?lang='._h($lang).'">'._h($lang).'</a>';
+            }
+            $langSwitch = join(' | ', $tmp);
         } else {
             $langSwitch = '';
         }
@@ -364,5 +402,19 @@ EOF;
         }
 
         return $this->baseUrl . '/images' . $src;
+    }
+
+    /**
+     * Display debug info if user has showDebug set.
+     *
+     * If output is HTML, then $msg must already be made safe.
+     *
+     * @param string
+     */
+    public function debug($msg)
+    {
+        if ($this->debug) {
+            echo $msg;
+        }
     }
 }

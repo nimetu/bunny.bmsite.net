@@ -25,6 +25,10 @@ class BunnyUser implements BunnyStorageInterface
         'guild_name' => '',
         'grade' => 'Member',
         'lang' => 'en',
+        // local info
+        '@debug' => false,
+        '@tester' => false,
+        '@translator' => false,
     ];
 
     /**
@@ -58,6 +62,24 @@ class BunnyUser implements BunnyStorageInterface
     public function getCharName()
     {
         return $this->user['char_name'];
+    }
+
+    /** @return bool */
+    public function isShowDebug()
+    {
+        return $this->user['@debug'];
+    }
+
+    /** @return bool */
+    public function isTester()
+    {
+        return $this->user['@tester'];
+    }
+
+    /** @return bool */
+    public function isTranslator()
+    {
+        return $this->user['@translator'];
     }
 
     /**

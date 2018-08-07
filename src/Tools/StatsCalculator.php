@@ -832,10 +832,9 @@ class StatsCalculator extends BunnyToolPage
         if (substr($statName, -15) == 'JewelProtection' || substr($statName, -10) == 'Resistance') {
             $item = 'Jewel';
         }
+
         if (!isset(self::$stats[$statName][$item])) {
-            if (isLOCAL) {
-                echo "ERROR: $statName does not have " . _h($item) . "<br>";
-            }
+            $this->view->debug("ERROR: '$statName' does not have " . _h($item) . "<br>");
             return false;
         }
 
@@ -1078,8 +1077,8 @@ class StatsCalculator extends BunnyToolPage
                 }
             }
         }
-        if (isLOCAL && !empty($notFound)) {
-            var_dump('preload: items without stats', $notFound);
+        if (!empty($notFound)) {
+            $this->view->debug('preload: items without stats: '.var_export($notFound));
         }
     }
 
