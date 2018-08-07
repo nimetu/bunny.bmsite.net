@@ -24,4 +24,8 @@ return [
     ),
     // where to save user data, ie occupation timers
     'save-path' => __DIR__ . '/save',
+    // session keys to store user and lang info
+    // sess_lang_key is only used for translators
+    'sess_user_key' => 'bunny_user',
+    'sess_lang_key' => 'bunny_lang',
 ];

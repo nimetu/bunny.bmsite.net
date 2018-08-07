@@ -20,6 +20,10 @@ if (file_exists(__DIR__ . '/config.php')) {
     $config = include __DIR__ . '/config.dist.php';
 }
 
+// keys used to store info in $_SESSION
+$sessUserKey = isset($config['sess_user_key']) ? $config['sess_user_key'] : 'bunny_user';
+$sessLangKey = isset($config['sess_lang_key']) ? $config['sess_lang_key'] : 'bunny_lang';
+
 if (!function_exists('ryzom_translate')) {
     // placeholder incase nimetu/ryzom_extra is not included
     function ryzom_translate($key, $lang = 'en') {
@@ -61,15 +65,15 @@ if (isset($_GET['user']) && isset($_GET['checksum'])) {
     }
 
     // user verified, save to session
-    $_SESSION['user'] = $user;
+    $_SESSION[$sessUserKey] = $user;
     // TODO: client bug, no redirect
     //redirect('http://bunny.bmsite.net/?logged');
 }
 
 //****************************************************************************
 // Session auth
-if (empty($user) && isset($_SESSION['user'])) {
-    $user = $_SESSION['user'];
+if (empty($user) && isset($_SESSION[$sessUserKey])) {
+    $user = $_SESSION[$sessUserKey];
 }
 
 //****************************************************************************
@@ -99,10 +103,10 @@ $user['@translator'] = $config['debug'] || in_array(strtolower($user['char_name'
 define('isTRANSLATOR', $user['@translator']);
 if ($user['@translator']) {
     if (isset($_GET['lang']) && in_array($_GET['lang'], $config['languages'])) {
-        $_SESSION['override_language'] = $_GET['lang'];
+        $_SESSION[$sessLangKey] = $_GET['lang'];
     }
-    if (isset($_SESSION['override_language'])) {
-        $user['lang'] = $_SESSION['override_language'];
+    if (isset($_SESSION[$sessLangKey])) {
+        $user['lang'] = $_SESSION[$sessLangKey];
     }
 }
 
