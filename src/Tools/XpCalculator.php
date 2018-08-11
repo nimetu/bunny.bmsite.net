@@ -570,7 +570,7 @@ class XpCalculator extends BunnyToolPage
             [
                 'name' => 'xp_calc[average_xp]',
                 'value' => (int)$form['average_xp'],
-                'size' => 100,
+                'size' => 8,
                 'style' => 'width: 100px;',
             ]
         );

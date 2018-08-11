@@ -120,7 +120,7 @@ abstract class MatsCalculator extends BunnyToolPage
                         [
                             'name' => 'mats_calc[' . _h($name) . ']',
                             'value' => $form[$name],
-                            'size' => 100,
+                            'size' => 8,
                             'style' => 'width: 100px',
                         ]
                     ),
