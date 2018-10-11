@@ -3,8 +3,10 @@
 
 return [
     // enable debug, tester, translator, anonymous access
+    // only enable for local testing, use debug_names for production
     'debug' => false,
-    // lowercase names who should receive debug info
+    // lowercase names who should receive debug info when debug is false
+    // use in production
     'debug_names' => array(),
     // lowercase names who should see experimental features.
     // allows anonymous access if 'guest' is in this list (guest info is kept in session only)
