@@ -18,7 +18,7 @@ class MatsCalculatorShield extends MatsCalculator
     /** {@inheritdoc} */
     protected function getUsedResources()
     {
-        return ['sap', 'wood'];
+        return ['wood', 'sap'];
     }
 
     /**
@@ -38,15 +38,15 @@ class MatsCalculatorShield extends MatsCalculator
         $craftplans['s'] = [
             // buckler
             'b' => [
-                'b' => ['sap' => 3, 'wood' => 4],
-                'm' => ['sap' => 4, 'wood' => 5],
-                'h' => ['sap' => 5, 'wood' => 6],
+                'b' => ['wood' => 4, 'sap' => 3],
+                'm' => ['wood' => 5, 'sap' => 4],
+                'h' => ['wood' => 6, 'sap' => 5],
             ],
             // shield
             's' => [
-                'b' => ['sap' => 6, 'wood' => 7],
-                'm' => ['sap' => 8, 'wood' => 9],
-                'h' => ['sap' => 10, 'wood' => 11],
+                'b' => ['wood' => 7, 'sap' => 6],
+                'm' => ['wood' => 9, 'sap' => 8],
+                'h' => ['wood' => 11, 'sap' => 10],
             ],
         ];
 

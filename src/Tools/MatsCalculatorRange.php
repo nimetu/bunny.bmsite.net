@@ -17,8 +17,8 @@ class MatsCalculatorRange extends MatsCalculator
 
     /** {@inheritdoc} */
     protected function getUsedResources()
-    {   // barrel, trigger, shaft/bullet, firing pin, ammoJacket, explosive
-        return ['wood', 'seed', 'bark', 'sap', 'resin', 'oil'];
+    {   // barrel, trigger, firing pin, shaft/bullet, ammoJacket, explosive
+        return ['wood', 'seed', 'sap', 'bark', 'resin', 'oil'];
     }
 
     /**
@@ -38,65 +38,65 @@ class MatsCalculatorRange extends MatsCalculator
         $craftplans['r'] = [
             // bowpistol
             '1b' => [
-                'b' => ['wood' => 2, 'seed' => 1, 'bark' => 1, 'sap' => 1],
-                'm' => ['wood' => 2, 'seed' => 2, 'bark' => 1, 'sap' => 2],
-                'h' => ['wood' => 2, 'seed' => 2, 'bark' => 2, 'sap' => 2],
+                'b' => ['wood' => 2, 'seed' => 1, 'sap' => 1, 'bark' => 1],
+                'm' => ['wood' => 2, 'seed' => 2, 'sap' => 2, 'bark' => 1],
+                'h' => ['wood' => 2, 'seed' => 2, 'sap' => 2, 'bark' => 2],
             ],
             // pistol
             '1p' => [
-                'b' => ['wood' => 1, 'seed' => 1, 'bark' => 1, 'sap' => 1],
-                'm' => ['wood' => 2, 'seed' => 1, 'bark' => 1, 'sap' => 1],
-                'h' => ['wood' => 2, 'seed' => 2, 'bark' => 1, 'sap' => 2],
+                'b' => ['wood' => 1, 'seed' => 1, 'sap' => 1, 'bark' => 1],
+                'm' => ['wood' => 2, 'seed' => 1, 'sap' => 1, 'bark' => 1],
+                'h' => ['wood' => 2, 'seed' => 2, 'sap' => 2, 'bark' => 1],
             ],
             // autolauncher
             '2a' => [
-                'b' => ['wood' => 3, 'seed' => 3, 'bark' => 3, 'sap' => 3],
-                'm' => ['wood' => 4, 'seed' => 4, 'bark' => 4, 'sap' => 4],
-                'h' => ['wood' => 5, 'seed' => 5, 'bark' => 5, 'sap' => 5],
+                'b' => ['wood' => 3, 'seed' => 3, 'sap' => 3, 'bark' => 3],
+                'm' => ['wood' => 4, 'seed' => 4, 'sap' => 4, 'bark' => 4],
+                'h' => ['wood' => 5, 'seed' => 5, 'sap' => 5, 'bark' => 5],
             ],
             // bowrifle
             '2b' => [
-                'b' => ['wood' => 4, 'seed' => 2, 'bark' => 2, 'sap' => 2],
-                'm' => ['wood' => 4, 'seed' => 3, 'bark' => 3, 'sap' => 3],
-                'h' => ['wood' => 4, 'seed' => 4, 'bark' => 4, 'sap' => 4],
+                'b' => ['wood' => 4, 'seed' => 2, 'sap' => 2, 'bark' => 2],
+                'm' => ['wood' => 4, 'seed' => 3, 'sap' => 3, 'bark' => 3],
+                'h' => ['wood' => 4, 'seed' => 4, 'sap' => 4, 'bark' => 4],
             ],
             // launcher
             '2l' => [
-                'b' => ['wood' => 3, 'seed' => 3, 'bark' => 3, 'sap' => 3],
-                'm' => ['wood' => 4, 'seed' => 4, 'bark' => 4, 'sap' => 4],
-                'h' => ['wood' => 5, 'seed' => 5, 'bark' => 5, 'sap' => 5],
+                'b' => ['wood' => 3, 'seed' => 3, 'sap' => 3, 'bark' => 3],
+                'm' => ['wood' => 4, 'seed' => 4, 'sap' => 4, 'bark' => 4],
+                'h' => ['wood' => 5, 'seed' => 5, 'sap' => 5, 'bark' => 5],
             ],
             // rifle
             '2r' => [
-                'b' => ['wood' => 2, 'seed' => 2, 'bark' => 2, 'sap' => 2],
-                'm' => ['wood' => 3, 'seed' => 3, 'bark' => 2, 'sap' => 3],
-                'h' => ['wood' => 4, 'seed' => 3, 'bark' => 3, 'sap' => 3],
+                'b' => ['wood' => 2, 'seed' => 2, 'sap' => 2, 'bark' => 2],
+                'm' => ['wood' => 3, 'seed' => 3, 'sap' => 3, 'bark' => 2],
+                'h' => ['wood' => 4, 'seed' => 3, 'sap' => 3, 'bark' => 3],
             ],
         ];
         $craftplans['p'] = [
             // bowpistol
             '1b' => [
-                'b' => ['bark' => 2, 'resin' => 2, 'oil' => 2],
+                'b' => ['resin' => 2, 'bark' => 2, 'oil' => 2],
             ],
             // pistol
             '1p' => [
-                'b' => ['bark' => 1, 'resin' => 2, 'oil' => 1],
+                'b' => ['resin' => 2, 'bark' => 1, 'oil' => 1],
             ],
             // autolauncher
             '2a' => [
-                'b' => ['bark' => 4, 'resin' => 4, 'oil' => 4],
+                'b' => ['resin' => 4, 'bark' => 4, 'oil' => 4],
             ],
             // bowrifle
             '2b' => [
-                'b' => ['bark' => 2, 'resin' => 2, 'oil' => 2],
+                'b' => ['resin' => 2, 'bark' => 2, 'oil' => 2],
             ],
             // launcher
             '2l' => [
-                'b' => ['bark' => 4, 'resin' => 4, 'oil' => 4],
+                'b' => ['resin' => 4, 'bark' => 4, 'oil' => 4],
             ],
             // rifle
             '2r' => [
-                'b' => ['bark' => 1, 'resin' => 2, 'oil' => 1],
+                'b' => ['resin' => 2, 'bark' => 1, 'oil' => 1],
             ],
         ];
 

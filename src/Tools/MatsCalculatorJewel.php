@@ -18,7 +18,7 @@ class MatsCalculatorJewel extends MatsCalculator
     /** {@inheritdoc} */
     protected function getUsedResources()
     {
-        return ['amber', 'seed'];
+        return ['seed', 'amber'];
     }
 
     /**
@@ -37,9 +37,9 @@ class MatsCalculatorJewel extends MatsCalculator
         //********************************************************************
         $craftplans['j'] = [
             'j' => [
-                'b' => ['amber' => 3, 'seed' => 3],
-                'm' => ['amber' => 4, 'seed' => 4],
-                'h' => ['amber' => 5, 'seed' => 5],
+                'b' => ['seed' => 3, 'amber' => 3],
+                'm' => ['seed' => 4, 'amber' => 4],
+                'h' => ['seed' => 5, 'amber' => 5],
             ],
         ];
 

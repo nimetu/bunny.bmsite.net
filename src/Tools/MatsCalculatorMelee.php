@@ -19,7 +19,7 @@ class MatsCalculatorMelee extends MatsCalculator
     protected function getUsedResources()
     {
         // blade/point, shaft, grip, hammer/counterweight, magic_focus
-        return ['shell', 'bark', 'grip', 'woodnode', 'amber'];
+        return ['shell', 'bark', 'fiber', 'woodnode', 'amber'];
     }
 
     /**
@@ -39,69 +39,69 @@ class MatsCalculatorMelee extends MatsCalculator
         $craftplans['m'] = [
             // mace
             '1bm' => [
-                'b' => ['bark' => 3, 'grip' => 3, 'woodnode' => 5 + 3],
-                'm' => ['bark' => 5, 'grip' => 5, 'woodnode' => 5 + 4],
-                'h' => ['bark' => 6, 'grip' => 6, 'woodnode' => 6 + 5],
+                'b' => ['bark' => 3, 'fiber' => 3, 'woodnode' => 5 + 3],
+                'm' => ['bark' => 5, 'fiber' => 5, 'woodnode' => 5 + 4],
+                'h' => ['bark' => 6, 'fiber' => 6, 'woodnode' => 6 + 5],
             ],
             // staff
             '1bs' => [
-                'b' => ['bark' => 7, 'grip' => 7],
-                'm' => ['bark' => 10, 'grip' => 9],
-                'h' => ['bark' => 12, 'grip' => 11],
+                'b' => ['bark' => 7, 'fiber' => 7],
+                'm' => ['bark' => 10, 'fiber' => 9],
+                'h' => ['bark' => 12, 'fiber' => 11],
             ],
             // dagger
             '1pd' => [
-                'b' => ['shell' => 2, 'bark' => 2, 'grip' => 1, 'woodnode' => 1],
-                'm' => ['shell' => 2, 'bark' => 2, 'grip' => 2, 'woodnode' => 2],
-                'h' => ['shell' => 3, 'bark' => 3, 'grip' => 2, 'woodnode' => 2],
+                'b' => ['shell' => 2, 'bark' => 2, 'fiber' => 1, 'woodnode' => 1],
+                'm' => ['shell' => 2, 'bark' => 2, 'fiber' => 2, 'woodnode' => 2],
+                'h' => ['shell' => 3, 'bark' => 3, 'fiber' => 2, 'woodnode' => 2],
             ],
             // spear
             '1ps' => [
-                'b' => ['shell' => 5, 'bark' => 5, 'grip' => 4],
-                'm' => ['shell' => 7, 'bark' => 6, 'grip' => 6],
-                'h' => ['shell' => 8, 'bark' => 8, 'grip' => 7],
+                'b' => ['shell' => 5, 'bark' => 5, 'fiber' => 4],
+                'm' => ['shell' => 7, 'bark' => 6, 'fiber' => 6],
+                'h' => ['shell' => 8, 'bark' => 8, 'fiber' => 7],
             ],
             // axe
             '1sa' => [
-                'b' => ['shell' => 5, 'bark' => 3, 'grip' => 3, 'woodnode' => 3],
-                'm' => ['shell' => 5, 'bark' => 5, 'grip' => 4, 'woodnode' => 4],
-                'h' => ['shell' => 6, 'bark' => 6, 'grip' => 6, 'woodnode' => 5],
+                'b' => ['shell' => 5, 'bark' => 3, 'fiber' => 3, 'woodnode' => 3],
+                'm' => ['shell' => 5, 'bark' => 5, 'fiber' => 4, 'woodnode' => 4],
+                'h' => ['shell' => 6, 'bark' => 6, 'fiber' => 6, 'woodnode' => 5],
             ],
             // sword
             '1ss' => [
-                'b' => ['shell' => 4, 'bark' => 4, 'grip' => 3, 'woodnode' => 3],
-                'm' => ['shell' => 5, 'bark' => 5, 'grip' => 5, 'woodnode' => 4],
-                'h' => ['shell' => 6, 'bark' => 6, 'grip' => 6, 'woodnode' => 5],
+                'b' => ['shell' => 4, 'bark' => 4, 'fiber' => 3, 'woodnode' => 3],
+                'm' => ['shell' => 5, 'bark' => 5, 'fiber' => 5, 'woodnode' => 4],
+                'h' => ['shell' => 6, 'bark' => 6, 'fiber' => 6, 'woodnode' => 5],
             ],
             // 2h mace
             '2bm' => [
-                'b' => ['bark' => 5, 'grip' => 5, 'woodnode' => 5 + 5],
-                'm' => ['bark' => 7, 'grip' => 7, 'woodnode' => 7 + 6],
-                'h' => ['bark' => 8, 'grip' => 8, 'woodnode' => 9 + 8],
+                'b' => ['bark' => 5, 'fiber' => 5, 'woodnode' => 5 + 5],
+                'm' => ['bark' => 7, 'fiber' => 7, 'woodnode' => 7 + 6],
+                'h' => ['bark' => 8, 'fiber' => 8, 'woodnode' => 9 + 8],
             ],
             // magic amp
             '2ms' => [
-                'b' => ['bark' => 5, 'grip' => 5, 'amber' => 10],
-                'm' => ['bark' => 6, 'grip' => 6, 'amber' => 15],
-                'h' => ['bark' => 7, 'grip' => 6, 'amber' => 20],
+                'b' => ['bark' => 5, 'fiber' => 5, 'amber' => 10],
+                'm' => ['bark' => 6, 'fiber' => 6, 'amber' => 15],
+                'h' => ['bark' => 7, 'fiber' => 6, 'amber' => 20],
             ],
             // 2h pike
             '2pp' => [
-                'b' => ['shell' => 7, 'bark' => 7, 'grip' => 6],
-                'm' => ['shell' => 9, 'bark' => 9, 'grip' => 9],
-                'h' => ['shell' => 11, 'bark' => 11, 'grip' => 11],
+                'b' => ['shell' => 7, 'bark' => 7, 'fiber' => 6],
+                'm' => ['shell' => 9, 'bark' => 9, 'fiber' => 9],
+                'h' => ['shell' => 11, 'bark' => 11, 'fiber' => 11],
             ],
             // 2h axe
             '2sa' => [
-                'b' => ['shell' => 5, 'bark' => 5, 'grip' => 5, 'woodnode' => 5],
-                'm' => ['shell' => 7, 'bark' => 7, 'grip' => 7, 'woodnode' => 6],
-                'h' => ['shell' => 9, 'bark' => 8, 'grip' => 8, 'woodnode' => 8],
+                'b' => ['shell' => 5, 'bark' => 5, 'fiber' => 5, 'woodnode' => 5],
+                'm' => ['shell' => 7, 'bark' => 7, 'fiber' => 7, 'woodnode' => 6],
+                'h' => ['shell' => 9, 'bark' => 8, 'fiber' => 8, 'woodnode' => 8],
             ],
             // 2h sword
             '2ss' => [
-                'b' => ['shell' => 5, 'bark' => 5, 'grip' => 5, 'woodnode' => 5],
-                'm' => ['shell' => 7, 'bark' => 7, 'grip' => 7, 'woodnode' => 6],
-                'h' => ['shell' => 9, 'bark' => 8, 'grip' => 8, 'woodnode' => 8],
+                'b' => ['shell' => 5, 'bark' => 5, 'fiber' => 5, 'woodnode' => 5],
+                'm' => ['shell' => 7, 'bark' => 7, 'fiber' => 7, 'woodnode' => 6],
+                'h' => ['shell' => 9, 'bark' => 8, 'fiber' => 8, 'woodnode' => 8],
             ],
         ];
 
