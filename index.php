@@ -20,6 +20,10 @@ if (file_exists(__DIR__ . '/config.php')) {
     $config = include __DIR__ . '/config.dist.php';
 }
 
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 // keys used to store info in $_SESSION
 $sessUserKey = isset($config['sess_user_key']) ? $config['sess_user_key'] : 'bunny_user';
 $sessLangKey = isset($config['sess_lang_key']) ? $config['sess_lang_key'] : 'bunny_lang';
@@ -269,8 +273,21 @@ function _t($key)
         return $words[$key]['en'];
     }
 
+    // single translation for all languages
     if (isset($words[$key]) && !is_array($words[$key])) {
-        return ryzom_translate($words[$key], $lang);
+        return $words[$key];
+    }
+
+    // try ryzom translation
+    if (($pos = strrpos($key, '.')) !== false) {
+        $sheet = substr($key, $pos+1);
+        if (in_array($sheet, ['sitem', 'item', 'place', 'continent', 'title', 'creature', 'skill', 'phrase', 'uxt'])) {
+            $ret = ryzom_translate($key, $lang);
+            if (strpos($ret, 'NotFound:') !== 0) {
+                $words[$key] = [$lang => $ret];
+                return $ret;
+            }
+        }
     }
 
     // local debug to highlight missing translations
