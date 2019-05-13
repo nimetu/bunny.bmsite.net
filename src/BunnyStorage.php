@@ -4,6 +4,8 @@
 
 interface BunnyStorageInterface
 {
+    public function clear($key);
+
     public function set($key, $value);
 
     public function get($key, $default = null);
@@ -16,6 +18,13 @@ interface BunnyStorageInterface
  */
 class BunnySessionStorage implements BunnyStorageInterface
 {
+    /**
+     * @param string $key
+     */
+    public function clear($key)
+    {
+        unset($_SESSION[$key]);
+    }
 
     /**
      * @param string $key
@@ -104,6 +113,17 @@ class BunnyFileStorage implements BunnyStorageInterface
 
         $this->data = null;
         $this->dirty = false;
+    }
+
+    /** {@inheritdoc} */
+    public function clear($key)
+    {
+        if ($this->data === null) {
+            $this->doLoad();
+        }
+
+        $this->dirty = true;
+        unset($this->data[$key]);
     }
 
     /** {@inheritdoc} */

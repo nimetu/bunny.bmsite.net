@@ -83,6 +83,14 @@ class BunnyUser implements BunnyStorageInterface
     }
 
     /**
+     * @see BunnyStorageInterface::clear
+     */
+    public function clear($key)
+    {
+        return $this->storage->clear($key);
+    }
+
+    /**
      * @see BunnyStorageInterface::get
      */
     public function get($key, $default = null)
