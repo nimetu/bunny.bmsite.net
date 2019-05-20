@@ -160,7 +160,7 @@ class RpJobsReminder extends BunnyToolPage
         $array = [];
         foreach ($this->availableEvents as $event) {
             $key = $event->getKey();
-            $name = $event->getName() . ' (' . $this->formatTimer($event->getTimer(), true) . ')';
+            $name = $event->getName() . ' (' . $this->view->formatTimer($event->getTimer(), true) . ')';
             $group = _th($event->getGroup());
             $array[$group][$key] = $name;
         }
@@ -230,7 +230,7 @@ EOF;
                 if ($now > $expires) {
                     $timer = '-';
                 } else {
-                    $timer = $this->formatTimer($expires - $now);
+                    $timer = $this->view->formatTimer($expires - $now);
                 }
 
                 $rows[$group][] = strtr(
@@ -336,34 +336,6 @@ EOF;
             unset($this->userEvents[$key]);
             $this->dirty = true;
         }
-    }
-
-    private function formatTimer($sec, $short = false)
-    {
-        $h = floor($sec / 3600);
-        $m = floor($sec / 60) % 60;
-        $s = $sec % 60;
-        $ret = [];
-        $ret[$h . 'h'] = $h;
-        $ret[$m . 'm'] = $m;
-        $ret[$s . 's'] = $s;
-
-        if ($short) {
-            foreach ($ret as $k => $v) {
-                if ($v == 0) {
-                    unset($ret[$k]);
-                }
-            }
-        } else {
-            foreach ($ret as $k => $v) {
-                if ($v != 0) {
-                    break;
-                }
-                unset($ret[$k]);
-            }
-        }
-
-        return join(' ', array_keys($ret));
     }
 
     public function hasUserEvent($key)

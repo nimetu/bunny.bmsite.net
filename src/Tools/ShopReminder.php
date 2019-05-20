@@ -91,7 +91,7 @@ EOF;
         if ($diff >= 0) {
             $_msg = strtr(_th('API key {key} will be updated in {time}.'), [
                 '{key}' => $key,
-                '{time}' => $this->formatTimer($diff),
+                '{time}' => $this->view->formatTimer($diff),
             ]);
         } else {
             $_msg = strtr(_th('API key {key} has expired.'), [
@@ -99,7 +99,7 @@ EOF;
             ]);
         }
         $_msg .= '<br>'.strtr(_th('Character XML age is {age}.'), [
-            '{age}' => $this->formatTimer($age),
+            '{age}' => $this->view->formatTimer($age),
         ]);
         $html .= '<table width="100%"><tr>';
         $html .= '<td width="80%">'.$_msg.'</td>';
@@ -144,7 +144,7 @@ EOF;
                 '{icon}' => '<img src="'.ryzom_item_icon_url((string)$row->item->sheet, -1, (int)$row->item->quality, (int)$row->stack, -1, false, true, false).'" alt="">',
                 '{name}' => _h($name),
                 '{continent}' => _th((string)$row->continent),
-                '{age}' => $this->formatTimer($ts, true),
+                '{age}' => $this->view->formatTimer($ts, true),
                 '{price}' => (int)$row->price,
             ]);
         }
@@ -178,33 +178,5 @@ EOF;
         }
 
         return $data;
-    }
-
-    private function formatTimer($sec, $short = false)
-    {
-        $h = floor($sec / 3600);
-        $m = floor($sec / 60) % 60;
-        $s = $sec % 60;
-        $ret = [];
-        $ret[$h . 'h'] = $h;
-        $ret[$m . 'm'] = $m;
-        $ret[$s . 's'] = $s;
-
-        if ($short) {
-            foreach ($ret as $k => $v) {
-                if ($v == 0) {
-                    unset($ret[$k]);
-                }
-            }
-        } else {
-            foreach ($ret as $k => $v) {
-                if ($v != 0) {
-                    break;
-                }
-                unset($ret[$k]);
-            }
-        }
-
-        return join(' ', array_keys($ret));
     }
 }

@@ -405,6 +405,42 @@ EOF;
     }
 
     /**
+     * Format seconds in human readable form.
+     */
+    public function formatTimer($sec, $compact = false)
+    {
+        $h = floor($sec / 3600);
+        $m = floor($sec / 60) % 60;
+        $s = $sec % 60;
+        $ret = [];
+        $ret[$h . 'h'] = $h;
+        $ret[$m . 'm'] = $m;
+        $ret[$s . 's'] = $s;
+
+        if ($compact) {
+            // remove zero values
+            foreach ($ret as $k => $v) {
+                if ($v == 0) {
+                    unset($ret[$k]);
+                }
+            }
+            if (empty($ret)) {
+                $ret[] = '0s';
+            }
+        } else {
+            // remove leading zero values
+            foreach ($ret as $k => $v) {
+                if ($v != 0) {
+                    break;
+                }
+                unset($ret[$k]);
+            }
+        }
+
+        return join(' ', array_keys($ret));
+    }
+
+    /**
      * Display debug info if user has showDebug set.
      *
      * If output is HTML, then $msg must already be made safe.
