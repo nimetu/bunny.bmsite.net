@@ -96,6 +96,7 @@ class BunnyTools
             'matsShieldCalc' => 'MatsCalculatorShield',
             // Reminders
             'rpjobReminder' => 'RpJobsReminder',
+            'shopReminder' => 'ShopReminder',
             // Encyclipedia
             'mobData' => 'MobData',
             'outpostRegistry' => 'OutpostRegistry',

@@ -85,6 +85,9 @@ class BunnyMenu
         $menu[_t('Reminders')] = [
             'rpjobReminder' => _t('Occupations'),
         ];
+        if (function_exists('ryzom_character_api')) {
+            $menu[_t('Reminders')]['shopReminder'] = _t('Vendor Inventory');
+        }
         $menu[_t('Info')] = [
             'http://app.ryzom.com/app_forum/?page=topic/view/25037/1' => _t('Forum BT 3.0'),
             'http://app.ryzom.com/app_forum/?page=topic/view/13298/1' => _t('Forum BT 2.0'),

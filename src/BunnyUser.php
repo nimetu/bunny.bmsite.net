@@ -83,6 +83,74 @@ class BunnyUser implements BunnyStorageInterface
     }
 
     /**
+     * Delete character api info from cache
+     */
+    public function clearCharacterApi()
+    {
+        $this->storage->clear('api_cache');
+    }
+
+    /**
+     * Fetches and caches Ryzom API character xml
+     *
+     * $apikey, if set, will override apikey from cache.
+     *
+     * @param string $apikey - if not set, then use one from cache
+     * @param bool $offline - if true, return only cached version, no updates from api server
+     *
+     * @return \SimpleXMLElement | bool
+     */
+    public function getCharacterApi($apikey = '', $offline = false)
+    {
+        $cacheKey = 'api_cache';
+        $cache = $this->get($cacheKey, ['xml' => '']);
+        if (!is_array($cache) || !isset($cache['xml'])) {
+            $cache = ['xml' => ''];
+        }
+
+        $xml = false;
+        $now = time();
+        if (!empty($cache['xml'])) {
+            $xml = simplexml_load_string($cache['xml']);
+        }
+
+        if ($xml !== false && (int)$xml['cached_until'] > $now) {
+            return $xml;
+        }
+
+        // return whatever was in cache
+        if ($offline) {
+            return $xml;
+        }
+
+        if (empty($apikey) && empty($xml['apikey'])) {
+            return false;
+        }
+
+        if (empty($apikey)) {
+            $apikey = (string)$xml['apikey'];
+        }
+
+        // fetch new
+        $data = ryzom_character_api($apikey);
+        if ($data === false || empty($data[$apikey])) {
+            // connection error? return cached version
+            return $xml;
+        }
+        $xml = $data[$apikey];
+
+        // if request was success, then save back to cache
+        if ($xml !== false && empty($xml->error)) {
+            $cache['xml'] = $xml->asXML();
+            $this->set($cacheKey, $cache);
+        }
+
+        return $xml;
+    }
+
+
+
+    /**
      * @see BunnyStorageInterface::clear
      */
     public function clear($key)
