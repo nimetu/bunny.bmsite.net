@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ryzom/php-api": "1.*",
+        "nimetu/ryzom_extra": "1.*"
+    }
+}

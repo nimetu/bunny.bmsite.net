@@ -5,6 +5,8 @@ Source for bunny.bmsite.net website. Data provided by Fluffy Bunnies guild.
 
 Requires PHP 5.4 or later.
 
+Optional dependency for [ryzom/php-api](https://packagist.org/packages/ryzom/php-api) and [nimetu/ryzom_extra](https://packagist.org/packages/nimetu/ryzom_extra).
+
 LICENSE
 =======
 

@@ -1,0 +1,105 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d94e380198902e309c9a64b267c7add6",
+    "packages": [
+        {
+            "name": "nimetu/ryzom_extra",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nimetu/ryzom_extra.git",
+                "reference": "2aa2ef35aa17cb1ddb2a693f538d90e39f434121"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nimetu/ryzom_extra/zipball/2aa2ef35aa17cb1ddb2a693f538d90e39f434121",
+                "reference": "2aa2ef35aa17cb1ddb2a693f538d90e39f434121",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "nimetu/ryzom_sheets": "1.*",
+                "php": ">=5.4.0",
+                "pimple/pimple": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "RyzomExtra": "lib"
+                },
+                "files": [
+                    "ryzom_extra.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Meelis Mägi",
+                    "email": "nimetu@gmail.com"
+                }
+            ],
+            "description": "Functions and data for ryzom sheet files",
+            "homepage": "http://bmsite.net",
+            "keywords": [
+                "ryzom"
+            ],
+            "time": "2018-08-23T11:31:39+00:00"
+        },
+        {
+            "name": "ryzom/php-api",
+            "version": "v1.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/nimetu/ryzomapi_lite",
+                "reference": "afc21ab0fb18559fd72c3192c26e7220cfd52d83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/nimetu/ryzomapi_lite/get/afc21ab0fb18559fd72c3192c26e7220cfd52d83.zip",
+                "reference": "afc21ab0fb18559fd72c3192c26e7220cfd52d83",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/ryzomapi_lite.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Meelis Mägi",
+                    "email": "nimetu@gmail.com"
+                }
+            ],
+            "description": "RyzomAPI php functions",
+            "keywords": [
+                "ryzom"
+            ],
+            "time": "2014-02-01T20:51:10+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
