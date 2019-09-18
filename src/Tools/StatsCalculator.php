@@ -464,7 +464,7 @@ class StatsCalculator extends BunnyToolPage
                     [
                         'name' => $this->tag . '[' . _h($type) . '][' . _h($stat) . ']',
                         'value' => (int) $form[$type][$stat],
-                        'size' => 4,
+                        'style' => 'width: 4em;',
                     ]
                 );
             }
