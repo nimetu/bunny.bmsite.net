@@ -129,7 +129,7 @@ EOF;
                         'cold & root',
                     ]
                 )) {
-                    $value = _th($value);
+                    $value = _t($value);
                 }
 
                 $text = _th($this->fields[$k]);
