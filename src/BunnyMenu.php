@@ -80,6 +80,7 @@ class BunnyMenu
         $menu[_t('Encyclopedia')] = [
             'mobData' => _t('Mobs data'),
             'outpostRegistry' => _t('Outpost Registry'),
+            'outpostResources' => _t('Outpost Resources'),
             'resourceInfo' => _t('Exe resource info'),
         ];
         $menu[_t('Reminders')] = [

@@ -100,6 +100,7 @@ class BunnyTools
             // Encyclipedia
             'mobData' => 'MobData',
             'outpostRegistry' => 'OutpostRegistry',
+            'outpostResources' => 'OutpostResources',
             'resourceInfo' => 'ResourceInfo',
         ];
 

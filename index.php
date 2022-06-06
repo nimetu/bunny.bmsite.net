@@ -252,7 +252,7 @@ function _clamp($value, $min, $max)
  *
  * @return string
  */
-function _t($key)
+function _t($key, $subkey = 0)
 {
     static $words = null;
     if ($words === null) {
@@ -282,11 +282,7 @@ function _t($key)
     if (($pos = strrpos($key, '.')) !== false) {
         $sheet = substr($key, $pos+1);
         if (in_array($sheet, ['sitem', 'item', 'place', 'continent', 'title', 'creature', 'skill', 'phrase', 'uxt'])) {
-            $ret = ryzom_translate($key, $lang);
-            if (strpos($ret, 'NotFound:') !== 0) {
-                $words[$key] = [$lang => $ret];
-                return $ret;
-            }
+            return ryzom_translate($key, $lang, $subkey);
         }
     }
 
