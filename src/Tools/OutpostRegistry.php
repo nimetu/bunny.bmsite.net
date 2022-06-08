@@ -144,10 +144,14 @@ class OutpostRegistry extends BunnyToolPage
                 $opRegion = '?';
             }
 
-            $guildIcon = '<img src="http://api.ryzom.com/guild_icon.php?icon=' . _h(
+            $guildIcon = isset($guild['icon'])
+                ? '<img src="http://api.ryzom.com/guild_icon.php?icon=' . _h(
                     $guild['icon']
-                ) . '&amp;size=s" style="max-height:24px;">';
-            $guildName = _h($guild['name']);
+                ) . '&amp;size=s" style="max-height:24px;">'
+                : '';
+            $guildName = isset($guild['name'])
+                ? _h($guild['name'])
+                : '-';
 
             $html .= strtr(
                 $tpl,
