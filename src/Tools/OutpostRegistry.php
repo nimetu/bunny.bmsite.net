@@ -91,17 +91,6 @@ class OutpostRegistry extends BunnyToolPage
         ';
 
         $html = '<table cellspacing="0" cellpadding="2">';
-        $html .= strtr(
-            $tplHeader,
-            [
-                '{color}' => '#101010',
-                '{font-color}' => '#e0e0e0',
-                '{align}' => 'center',
-                '{name}' => _th('Name'),
-                '{region}' => _th('Region'),
-                '{guild}' => _th('Guild'),
-            ]
-        );
 
         $i = 0;
         $lastRegion = '';
@@ -125,12 +114,12 @@ class OutpostRegistry extends BunnyToolPage
                 $html .= strtr(
                     $tplHeader,
                     [
-                        '{color}' => '#808080',
-                        '{font-color}' => 'yellow',
+                        '{color}' => '#101010',
+                        '{font-color}' => '#e0e0e0',
                         '{align}' => 'left',
                         '{name}' => _th($reg),
-                        '{region}' => '',
-                        '{guild}' => '',
+                        '{region}' => _th('Region'),
+                        '{guild}' => _th('Guild'),
                     ]
                 );
 
